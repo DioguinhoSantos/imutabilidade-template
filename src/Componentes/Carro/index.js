@@ -1,13 +1,13 @@
 import { CarroContainer } from './styles'
 
-export function Carro({ modelo, cor, ano, flex, adicionadoPor }) {
+export function Carro({ automovel, adicionadoPor }) {
   return (
     <CarroContainer>
-      <h2>{modelo}</h2>
+      <h2>{automovel.modelo}</h2>
       <ul>
-        <li>Cor: {cor}</li>
-        <li>Ano: {ano}</li>
-        <li>Flex: {flex ? 'Sim' : 'Não'}</li>
+        <li>Cor: {automovel.cor}</li>
+        <li>Ano: {automovel.ano}</li>
+        <li>Flex: {automovel.flex ? 'Sim' : 'Não'}</li>
         <li>Adicionado: {adicionadoPor}</li>
       </ul>
     </CarroContainer>

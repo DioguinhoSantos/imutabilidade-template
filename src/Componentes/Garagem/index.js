@@ -1,20 +1,26 @@
 import { Carro } from '../Carro'
 import { Botao, Estacionamento, GaragemContainer } from './styles'
+import { useState } from 'react'
 
-export function Garagem({ nome }) {
+export function Garagem({ nome, setNome }) {
+
+  const [automovel, setAutomovel] = useState({modelo: "Corsa", cor: "branco", ano: 2020, flex: true})
+
+  const mudaNome = () => {
+  setNome("Coliro")  
+  }
+
   return (
     <GaragemContainer>
       <h1>Garagem da {nome}</h1>
-      <Botao>Muda nome</Botao>
+      <Botao onClick={mudaNome}>Muda nome</Botao>
 
       <Estacionamento>
         <Carro
-          modelo="Corsa"
-          cor="branco"
-          ano={2020}
-          adicionadoPor="Labenu"
-          flex
+          automovel={automovel}
+          adicionadoPor={nome}
         />
+        
       </Estacionamento>
     </GaragemContainer>
   )
